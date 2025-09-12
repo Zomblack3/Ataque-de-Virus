@@ -12,6 +12,8 @@ namespace run
 	{
 		SCREENS actualScreen = MAIN_MENU;
 
+		Player player = createPlayer(windowWidth / 2, windowHeight - 30, 75, 25);
+
 		slWindow(windowWidth, windowHeight, "BREAKOUT", 0);
 
 		while (!slShouldClose() && !slGetKey(SL_KEY_ESCAPE))
@@ -30,7 +32,6 @@ namespace run
 				break;
 			case GAMEPLAY:
 			
-
 
 				
 				break;
