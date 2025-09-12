@@ -2,6 +2,10 @@
 
 #include "gameManager.h"
 
+#include "gameplay.h"
+
+#include "player.h"
+
 namespace run
 {
 	void game()
@@ -25,8 +29,9 @@ namespace run
 				
 				break;
 			case GAMEPLAY:
-				
-				
+			
+
+
 				
 				break;
 			case EXIT:
