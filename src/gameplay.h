@@ -2,7 +2,9 @@
 
 #include "gameManager.h"
 
-void gameplay(SCREENS& actualScreen);
+#include "player.h"
 
-void updateGameplay(SCREENS& actualScreen);
-void drawGameplay();
+void gameplay(SCREENS& actualScreen, Player& player);
+
+void updateGameplay(SCREENS& actualScreen, Player& player);
+void drawGameplay(Player player);

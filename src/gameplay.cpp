@@ -1,17 +1,17 @@
 #include "gameplay.h"
 
-void gameplay(SCREENS& actualScreen)
+void gameplay(SCREENS& actualScreen, Player& player)
 {
-	updateGameplay(actualScreen);
-	drawGameplay();
+	updateGameplay(actualScreen, player);
+	drawGameplay(player);
 }
 
-void updateGameplay(SCREENS& actualScreen)
+void updateGameplay(SCREENS& actualScreen, Player& player)
 {
 
 }
 
-void drawGameplay()
+void drawGameplay(Player player)
 {
 
 }
