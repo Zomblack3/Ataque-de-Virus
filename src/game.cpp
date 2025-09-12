@@ -5,6 +5,7 @@
 #include "gameplay.h"
 
 #include "player.h"
+#include "ball.h"
 
 namespace run
 {
@@ -13,6 +14,7 @@ namespace run
 		SCREENS actualScreen = GAMEPLAY;
 
 		Player player = createPlayer(windowWidth / 2, 30, 75, 25);
+		Ball ball = { };
 
 		slWindow(windowWidth, windowHeight, "BREAKOUT", 0);
 

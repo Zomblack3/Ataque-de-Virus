@@ -1,12 +1,12 @@
 #include "gameplay.h"
 
-void gameplay(SCREENS& actualScreen, Player& player)
+void gameplay(SCREENS& actualScreen, Player& player, Ball& ball)
 {
-	updateGameplay(actualScreen, player);
-	drawGameplay(player);
+	updateGameplay(actualScreen, player, ball);
+	drawGameplay(player, ball);
 }
 
-void updateGameplay(SCREENS& actualScreen, Player& player)
+void updateGameplay(SCREENS& actualScreen, Player& player, Ball& ball)
 {
 	if (slGetKey('a') || slGetKey('A'))
 		if (player.x > player.width / 2)
@@ -17,7 +17,7 @@ void updateGameplay(SCREENS& actualScreen, Player& player)
 		player.x += 10;
 }
 
-void drawGameplay(Player player)
+void drawGameplay(Player player, Ball ball)
 {
 	slSetBackColor(0, 0, 0);
 
