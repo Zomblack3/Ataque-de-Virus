@@ -11,4 +11,4 @@ enum SCREENS
 };
 
 const int windowWidth = 750;
-const int windowHeight = 900;
+const int windowHeight = 800;

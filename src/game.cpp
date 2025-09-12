@@ -10,9 +10,9 @@ namespace run
 {
 	void game()
 	{
-		SCREENS actualScreen = MAIN_MENU;
+		SCREENS actualScreen = GAMEPLAY;
 
-		Player player = createPlayer(windowWidth / 2, windowHeight - 30, 75, 25);
+		Player player = createPlayer(windowWidth / 2, 30, 75, 25);
 
 		slWindow(windowWidth, windowHeight, "BREAKOUT", 0);
 
@@ -32,7 +32,7 @@ namespace run
 				break;
 			case GAMEPLAY:
 			
-
+				gameplay(actualScreen, player);
 				
 				break;
 			case EXIT:
