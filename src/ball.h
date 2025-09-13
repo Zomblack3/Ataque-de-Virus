@@ -10,5 +10,7 @@ struct Ball
 
 	int radius = 10;
 
+	bool hasCollide = false;
+
 	bool isActive = false;
 };
