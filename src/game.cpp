@@ -34,7 +34,7 @@ namespace run
 				break;
 			case GAMEPLAY:
 			
-				gameplay(actualScreen, player);
+				gameplay(actualScreen, player, ball);
 				
 				break;
 			case EXIT:
