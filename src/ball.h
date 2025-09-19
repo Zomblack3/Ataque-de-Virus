@@ -2,14 +2,14 @@
 
 struct Ball
 {
-	int x = 0;
-	int y = 0;
+	float x = 0;
+	float y = 0;
 
-	int startSpeedX = 5;
-	int startSpeedY = 5;
+	float startSpeedX = 5;
+	float startSpeedY = 5;
 
-	int speedX = 5;
-	int speedY = 5;
+	float speedX = 5;
+	float speedY = 5;
 
 	int radius = 10;
 

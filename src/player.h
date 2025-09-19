@@ -2,10 +2,10 @@
 
 struct Player
 {
-	int x = 0;
-	int y = 0;
-	int baseX = 0;
-	int baseY = 0;
+	float x = 0;
+	float y = 0;
+	float baseX = 0;
+	float baseY = 0;
 
 	int width = 0;
 	int height = 0;

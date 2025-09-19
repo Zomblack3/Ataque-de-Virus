@@ -92,8 +92,8 @@ void drawGameplay(Player player, Ball ball)
 
 	slSetForeColor(1, 1, 1, 100);
 
-	slCircleFill(ball.x, ball.y, ball.radius, 100);
 	slRectangleFill(player.x, player.y, player.width, player.height);
+	slCircleFill(ball.x, ball.y, ball.radius, 100);
 
 	slRender();
 }
