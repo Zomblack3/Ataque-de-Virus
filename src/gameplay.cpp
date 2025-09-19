@@ -27,10 +27,10 @@ void updateGameplay(SCREENS& actualScreen, Player& player, Ball& ball)
 
 			if (ball.untouchableTimer <= 0)
 			{
-				/*if (ballPlayerCollition(player, ball))
+				/*if (ballCollitionTest(player, ball))
 				{
 					ball.speedY *= -1.0f;
-					ball.speedX = (ball.x - player.x) / (player.width / 2) * 5;
+					ball.speedX = (ball.x - player.x) / player.width * 5;
 
 					ball.untouchableTimer = 10;
 				}*/
@@ -100,45 +100,13 @@ void drawGameplay(Player player, Ball ball)
 
 void ballPlayerCollition(Player player, Ball& ball)
 {
-	if (ball.y - ball.radius <= (player.y + (player.height / 2)) && ball.y - ball.radius >= player.y)
+	if (ball.y - ball.radius <= (player.y + (player.height / 2)))
 	{
-		if ((ball.x + (ball.radius / 2)) > (player.x - (player.width / 2)) && (ball.x - (ball.radius / 2)) < (player.x + (player.width / 2)))
+		if ((ball.x + (ball.radius / 2)) >= (player.x - (player.width / 2)) && (ball.x - (ball.radius / 2)) <= (player.x + (player.width / 2)))
 		{
 			ball.speedY *= -1.0f;
 			ball.speedX = (ball.x - player.x) / player.width * 5;
 		}
 	}
-	else if (ball.y + ball.radius > player.y && ball.y + ball.radius < (player.y - (player.height / 2)))
-	{
-		if ((ball.x + (ball.radius / 2)) > (player.x - (player.width / 2)) && (ball.x - (ball.radius / 2)) < (player.x + (player.width / 2)))
-		{
-			ball.speedY *= -1.0f;
-			ball.speedX *= -1.0f;
-		}
-	}
-		
-
-	/*float closerPosX = ball.x;
-	float closerPosY = ball.y;
-
-	if (ball.x + (ball.radius / 2) < player.x - (player.width / 2))
-		closerPosX = player.x - (player.width / static_cast<float>(2));
-	else if (ball.x - (ball.radius / 2) > player.x + (player.width / 2))
-		closerPosX = player.x + (player.width / static_cast<float>(2));
-	
-	if (ball.y - (ball.radius / 2) < player.y + (player.height / 2))
-		closerPosY = player.y + (player.height / static_cast<float>(2));
-	else if (ball.y - (ball.radius / 2) > player.y - (player.height / 2))
-		closerPosY = player.y - (player.height / static_cast<float>(2));
-
-	float distX = ball.x - closerPosX;
-	float distY = ball.y - closerPosY;
-
-	float distance = sqrt((distX * distX) + (distY * distY));
-
-	if (distance <= ball.radius)
-		return true;
-
-	return false;*/
 }
 
