@@ -16,6 +16,5 @@ struct Ball
 	int untouchableTimer = 0;
 
 	bool hasCollide = false;
-
 	bool isActive = false;
 };
