@@ -23,7 +23,7 @@ namespace run
 
 		slSetFont(font, 24);
 
-		while (!slShouldClose() && !slGetKey(SL_KEY_ESCAPE))
+		while (!slShouldClose())
 		{
 			switch (actualScreen)
 			{

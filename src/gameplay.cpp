@@ -57,7 +57,7 @@ static void updateGameplay(SCREENS& actualScreen, Player& player, Ball& ball)
 
 	if (pauseButtonInputTimer == 0)
 	{
-		if (slGetKey('p') || slGetKey('P'))
+		if (slGetKey('p') || slGetKey('P') || slGetKey(SL_KEY_ESCAPE))
 		{
 			if (isPauseOn)
 				isPauseOn = false;
@@ -95,6 +95,10 @@ static void updateGameplay(SCREENS& actualScreen, Player& player, Ball& ball)
 		minutes++;
 		seconds = 0;
 	}
+
+	// kill command
+	if (slGetKey('/') && slGetKey('k') || slGetKey('K'))
+		player.lives = 0;
 
 	if (loseCondition(player))
 		actualScreen = LOSE_SCREEN;

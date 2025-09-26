@@ -23,8 +23,8 @@ void drawLoseScreen(Player player)
 
 	slSetForeColor(1, 1, 1, 100);
 
-	slText(windowWidth / 2.0f, (windowHeight / 2.0f) + 200, "PERDISTE");
-	slText(windowWidth / 2.0f, windowHeight / 2.0f, "Presione R para reiniciar");
+	slText(windowWidth / 2.0f - (3.0f * 24.0f), (windowHeight / 2.0f) + 200, "PERDISTE");
+	slText(windowWidth / 2.0f - (8.0f * 24.0f), windowHeight / 2.0f, "Presione R para reiniciar");
 
 	slRender();
 }
