@@ -3,6 +3,7 @@
 #include "gameManager.h"
 
 #include "gameplay.h"
+#include "loseScreen.h"
 
 #include "player.h"
 #include "ball.h"
@@ -40,6 +41,16 @@ namespace run
 			
 				gameplay(actualScreen, player, ball, font);
 				
+				break;
+			case LOSE_SCREEN:
+
+				loseScreen(actualScreen, player, ball);
+
+				break;
+			case WIN_SCREEN:
+
+
+
 				break;
 			case EXIT:
 				

@@ -4,11 +4,13 @@
 
 int pauseButtonInputTimer = 0;
 
-float miliseconds = 0.0f;
+double miliseconds = 0.0f;
 int seconds = 0;
 int minutes = 0;
 
 bool isPauseOn = false;
+bool isLoseScreenOn = false;
+bool isWinScreenOn = false;
 
 void gameplay(SCREENS& actualScreen, Player& player, Ball& ball, int font)
 {
@@ -47,6 +49,8 @@ static void updateGameplay(SCREENS& actualScreen, Player& player, Ball& ball)
 
 				ball.speedX = ball.startSpeedX;
 				ball.speedY = ball.startSpeedY;
+
+				player.lives--;
 			}
 		}
 	}
@@ -91,12 +95,15 @@ static void updateGameplay(SCREENS& actualScreen, Player& player, Ball& ball)
 		minutes++;
 		seconds = 0;
 	}
+
+	if (loseCondition(player))
+		actualScreen = LOSE_SCREEN;
 }
 
 static void drawGameplay(Player player, Ball ball, int font)
 {
 	//std::string pointsText = "Points: " + std::to_string(player.points);
-
+	std::string livesText = "Vidas: " + std::to_string(player.lives);
 	std::string timerText = "Tiempo: " + std::to_string(minutes) + ":" + std::to_string(seconds);
 
 	slSetBackColor(0, 0, 0);
@@ -113,6 +120,7 @@ static void drawGameplay(Player player, Ball ball, int font)
 	slSetForeColor(1, 1, 1, 100);
 	
 	slText(10, windowHeight - 30, timerText.c_str());
+	slText(250, windowHeight - 30, livesText.c_str());
 
 	slRender();
 }
@@ -130,3 +138,12 @@ static void ballRecCollition(Player player, Ball& ball)
 	}
 }
 
+static bool loseCondition(Player player)
+{
+	if (player.lives <= 0)
+		return true;
+
+	return false;
+}
+
+//static bool winCondition()
