@@ -13,6 +13,8 @@ struct Player
 	int points = 0;
 	int startingLives = 3;
 	int lives = startingLives;
+
+	int texture = 0;
 };
 
 Player createPlayer(int x, int y, int width, int height);

@@ -15,13 +15,20 @@ namespace run
 	{
 		SCREENS actualScreen = GAMEPLAY;
 
+		slWindow(windowWidth, windowHeight, "BREAKOUT PROJECT", 0);
+		
 		Player player = createPlayer(windowWidth / 2, 30, 75, 25);
 		Ball ball = { };
 		Brick bricks[amountOfBricksRow][amountOfBricksCollumns] = { };
 
-		setBricks(bricks, 175, windowHeight - 100, 50, 25);
+		int ballTexture = slLoadTexture("res/textures/ball.png");
+		int playerTexture = slLoadTexture("res/textures/player.png");
+		int brickTexture = slLoadTexture("res/textures/bricks.png");
 
-		slWindow(windowWidth, windowHeight, "BREAKOUT PROJECT", 0);
+		player.texture = playerTexture;
+		ball.texture = ballTexture;
+
+		setBricks(bricks, 175, windowHeight - 100, 50, 25, brickTexture);
 
 		int font = slLoadFont("res/fonts/Bitcount_Single_Ink/BitcountSingleInk-VariableFont_CRSV,ELSH,ELXP,SZP1,SZP2,XPN1,XPN2,YPN1,YPN2,slnt,wght.ttf");
 
@@ -43,7 +50,7 @@ namespace run
 				break;
 			case GAMEPLAY:
 			
-				gameplay(actualScreen, player, ball, bricks);
+				gameplay(actualScreen, player, ball, bricks, ballTexture);
 				
 				break;
 			case LOSE_SCREEN:

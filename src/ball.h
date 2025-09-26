@@ -1,5 +1,7 @@
 #pragma once
 
+#include "sl.h"
+
 struct Ball
 {
 	float x = 0;
@@ -17,4 +19,6 @@ struct Ball
 
 	bool hasCollide = false;
 	bool isActive = false;
+
+	int texture = 0;
 };

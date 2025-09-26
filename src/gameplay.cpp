@@ -10,10 +10,10 @@ int minutes = 0;
 
 bool isPauseOn = false;
 
-void gameplay(SCREENS& actualScreen, Player& player, Ball& ball, Brick bricks[amountOfBricksRow][amountOfBricksCollumns])
+void gameplay(SCREENS& actualScreen, Player& player, Ball& ball, Brick bricks[amountOfBricksRow][amountOfBricksCollumns], int ballTexture)
 {
 	updateGameplay(actualScreen, player, ball, bricks);
-	drawGameplay(player, ball, bricks);
+	drawGameplay(player, ball, bricks, ballTexture);
 }
 
 static void updateGameplay(SCREENS& actualScreen, Player& player, Ball& ball, Brick bricks[amountOfBricksRow][amountOfBricksCollumns])
@@ -122,7 +122,7 @@ static void updateGameplay(SCREENS& actualScreen, Player& player, Ball& ball, Br
 	}
 }
 
-static void drawGameplay(Player player, Ball ball, Brick bricks[amountOfBricksRow][amountOfBricksCollumns])
+static void drawGameplay(Player player, Ball ball, Brick bricks[amountOfBricksRow][amountOfBricksCollumns], int ballTexture)
 {
 	std::string timerText = "Tiempo: " + std::to_string(minutes) + ":" + std::to_string(seconds);
 	std::string livesText = "Vidas: " + std::to_string(player.lives);
@@ -132,13 +132,18 @@ static void drawGameplay(Player player, Ball ball, Brick bricks[amountOfBricksRo
 
 	slSetForeColor(1, 1, 1, 100);
 
-	slRectangleFill(player.x, player.y, player.width, player.height);
-	slCircleFill(ball.x, ball.y, ball.radius, 100);
+	//slRectangleFill(player.x, player.y, player.width, player.height);
+	slSprite(player.texture, player.x, player.y, player.width, player.height);
+
+	//slCircleFill(ball.x, ball.y, ball.radius, 100);
+	slSprite(ball.texture, ball.x, ball.y, ball.radius * 4, ball.radius * 4);
 
 	for (int j = 0; j < amountOfBricksCollumns; j++)
 		for (int i = 0; i < amountOfBricksRow; i++)
 			if (bricks[i][j].isActive)
-				slRectangleFill(bricks[i][j].x, bricks[i][j].y, bricks[i][j].width, bricks[i][j].height);
+				slSprite(bricks[i][j].texture, bricks[i][j].x, bricks[i][j].y, bricks[i][j].width, bricks[i][j].height);
+	
+	//slRectangleFill(bricks[i][j].x, bricks[i][j].y, bricks[i][j].width, bricks[i][j].height);
 
 	slSetForeColor(0.5f, 0, 0.5f, 100);
 
