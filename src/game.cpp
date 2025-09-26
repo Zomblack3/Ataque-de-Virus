@@ -7,6 +7,7 @@
 
 #include "player.h"
 #include "ball.h"
+#include "brick.h"
 
 namespace run
 {
@@ -16,8 +17,11 @@ namespace run
 
 		Player player = createPlayer(windowWidth / 2, 30, 75, 25);
 		Ball ball = { };
+		Brick bricks[amountOfBricksRow][amountOfBricksCollumns] = { };
 
-		slWindow(windowWidth, windowHeight, "BREAKOUT", 0);
+		setBricks(bricks, 175, windowHeight - 100, 50, 25);
+
+		slWindow(windowWidth, windowHeight, "BREAKOUT PROJECT", 0);
 
 		int font = slLoadFont("res/fonts/Bitcount_Single_Ink/BitcountSingleInk-VariableFont_CRSV,ELSH,ELXP,SZP1,SZP2,XPN1,XPN2,YPN1,YPN2,slnt,wght.ttf");
 
@@ -39,7 +43,7 @@ namespace run
 				break;
 			case GAMEPLAY:
 			
-				gameplay(actualScreen, player, ball, font);
+				gameplay(actualScreen, player, ball, bricks);
 				
 				break;
 			case LOSE_SCREEN:

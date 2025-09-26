@@ -12,13 +12,13 @@ bool isPauseOn = false;
 bool isLoseScreenOn = false;
 bool isWinScreenOn = false;
 
-void gameplay(SCREENS& actualScreen, Player& player, Ball& ball, int font)
+void gameplay(SCREENS& actualScreen, Player& player, Ball& ball, Brick bricks[amountOfBricksRow][amountOfBricksCollumns])
 {
-	updateGameplay(actualScreen, player, ball);
-	drawGameplay(player, ball, font);
+	updateGameplay(actualScreen, player, ball, bricks);
+	drawGameplay(player, ball, bricks);
 }
 
-static void updateGameplay(SCREENS& actualScreen, Player& player, Ball& ball)
+static void updateGameplay(SCREENS& actualScreen, Player& player, Ball& ball, Brick bricks[amountOfBricksRow][amountOfBricksCollumns])
 {
 	if (!isPauseOn)
 	{
@@ -33,7 +33,11 @@ static void updateGameplay(SCREENS& actualScreen, Player& player, Ball& ball)
 			ball.y += ball.speedY;
 
 			if (ball.untouchableTimer <= 0)
-				ballRecCollition(player, ball);
+			{
+				ballPlayerCollition(player, ball);
+
+				ballBrickCollition(bricks, ball);
+			}
 			else
 				ball.untouchableTimer--;
 
@@ -104,7 +108,7 @@ static void updateGameplay(SCREENS& actualScreen, Player& player, Ball& ball)
 		actualScreen = LOSE_SCREEN;
 }
 
-static void drawGameplay(Player player, Ball ball, int font)
+static void drawGameplay(Player player, Ball ball, Brick bricks[amountOfBricksRow][amountOfBricksCollumns])
 {
 	//std::string pointsText = "Points: " + std::to_string(player.points);
 	std::string livesText = "Vidas: " + std::to_string(player.lives);
@@ -116,6 +120,11 @@ static void drawGameplay(Player player, Ball ball, int font)
 
 	slRectangleFill(player.x, player.y, player.width, player.height);
 	slCircleFill(ball.x, ball.y, ball.radius, 100);
+
+	for (int j = 0; j < amountOfBricksCollumns; j++)
+		for (int i = 0; i < amountOfBricksRow; i++)
+			if (bricks[i][j].isActive)
+				slRectangleFill(bricks[i][j].x, bricks[i][j].y, bricks[i][j].width, bricks[i][j].height);
 
 	slSetForeColor(0.5f, 0, 0.5f, 100);
 
@@ -129,7 +138,7 @@ static void drawGameplay(Player player, Ball ball, int font)
 	slRender();
 }
 
-static void ballRecCollition(Player player, Ball& ball)
+static void ballPlayerCollition(Player player, Ball& ball)
 {
 	if (ball.y - ball.radius <= (player.y + (player.height / 2.0f)) && ball.y + ball.radius >= (player.y - (player.height / 2.0f)))
 	{
@@ -138,6 +147,29 @@ static void ballRecCollition(Player player, Ball& ball)
 			ball.speedY *= -1.0f;
 			ball.speedX = (ball.x - player.x) / player.width * 5;
 			ball.untouchableTimer = 10;
+		}
+	}
+}
+
+static void ballBrickCollition(Brick bricks[amountOfBricksRow][amountOfBricksCollumns], Ball& ball)
+{
+	for (int j = 0; j < amountOfBricksCollumns; j++)
+	{
+		for (int i = 0; i < amountOfBricksRow; i++)
+		{
+			if (bricks[i][j].isActive)
+			{
+				if (ball.y - ball.radius <= (bricks[i][j].y + (bricks[i][j].height / 2.0f)) && ball.y + ball.radius >= (bricks[i][j].y - (bricks[i][j].height / 2.0f)))
+				{
+					if ((ball.x + (ball.radius / 2.0f)) >= (bricks[i][j].x - (bricks[i][j].width / 2.0f)) && (ball.x - (ball.radius / 2.0f)) <= (bricks[i][j].x + (bricks[i][j].width / 2.0f)))
+					{
+						ball.speedY *= -1.0f;
+						ball.speedX = (ball.x - bricks[i][j].x) / bricks[i][j].width * 5;
+
+						bricks[i][j].isActive = false;
+					}
+				}
+			}
 		}
 	}
 }

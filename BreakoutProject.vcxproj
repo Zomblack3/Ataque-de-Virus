@@ -140,6 +140,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="src\brick.cpp" />
     <ClCompile Include="src\game.cpp" />
     <ClCompile Include="src\gameplay.cpp" />
     <ClCompile Include="src\loseScreen.cpp" />
@@ -148,6 +149,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\ball.h" />
+    <ClInclude Include="src\brick.h" />
     <ClInclude Include="src\game.h" />
     <ClInclude Include="src\gameManager.h" />
     <ClInclude Include="src\gameplay.h" />
