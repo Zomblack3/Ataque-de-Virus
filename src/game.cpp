@@ -4,6 +4,7 @@
 
 #include "gameplay.h"
 #include "loseScreen.h"
+#include "winScreen.h"
 
 #include "player.h"
 #include "ball.h"
@@ -55,12 +56,12 @@ namespace run
 				break;
 			case LOSE_SCREEN:
 
-				loseScreen(actualScreen, player, ball);
+				loseScreen(actualScreen, player, ball, bricks);
 
 				break;
 			case WIN_SCREEN:
 
-
+				winScreen(actualScreen, player, ball, bricks);
 
 				break;
 			case EXIT:

@@ -146,6 +146,7 @@
     <ClCompile Include="src\loseScreen.cpp" />
     <ClCompile Include="src\main.cpp" />
     <ClCompile Include="src\player.cpp" />
+    <ClCompile Include="src\winScreen.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\ball.h" />
@@ -155,6 +156,7 @@
     <ClInclude Include="src\gameplay.h" />
     <ClInclude Include="src\loseScreen.h" />
     <ClInclude Include="src\player.h" />
+    <ClInclude Include="src\winScreen.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
