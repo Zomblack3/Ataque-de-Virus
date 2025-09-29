@@ -2,6 +2,7 @@
 
 #include "gameManager.h"
 
+#include "mainMenu.h"
 #include "gameplay.h"
 #include "loseScreen.h"
 #include "winScreen.h"
@@ -14,7 +15,7 @@ namespace run
 {
 	void game()
 	{
-		SCREENS actualScreen = GAMEPLAY;
+		SCREENS actualScreen = MAIN_MENU;
 
 		slWindow(windowWidth, windowHeight, "BREAKOUT PROJECT", 0);
 		
@@ -35,13 +36,13 @@ namespace run
 
 		slSetFont(font, 24);
 
-		while (!slShouldClose())
+		while (!slShouldClose() && !slGetKey('s') && !slGetKey('S'))
 		{
 			switch (actualScreen)
 			{
 			case MAIN_MENU:
 
-
+				mainMenu(actualScreen);
 
 				break;
 			case OPTIONS:
@@ -66,12 +67,14 @@ namespace run
 				break;
 			case EXIT:
 				
-				
+
 				
 				break;
 			default:
 				break;
 			}
 		}
+
+		slClose();
 	}
 }

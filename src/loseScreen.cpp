@@ -19,6 +19,13 @@ void updateLoseScreen(SCREENS& actualScreen, Player& player, Ball& ball, Brick b
 
 		resetGameplay(player, ball, bricks);
 	}
+
+	if (slGetKey('m') || slGetKey('M'))
+	{
+		actualScreen = MAIN_MENU;
+
+		resetGameplay(player, ball, bricks);
+	}
 }
 
 void drawLoseScreen(Player player)
@@ -30,8 +37,9 @@ void drawLoseScreen(Player player)
 	slSetForeColor(1, 1, 1, 100);
 
 	slText(windowWidth / 2.0f - (3.0f * 24.0f), (windowHeight / 2.0f) + 200, "PERDISTE");
-	slText(windowWidth / 2.0f - (3.0f * 24.0f), windowHeight / 2.0f, pointsText.c_str());
+	slText(windowWidth / 2.0f - ((pointsText.size() / 3.0f) * 24.0f), windowHeight / 2.0f, pointsText.c_str());
 	slText(windowWidth / 2.0f - (8.0f * 24.0f), (windowHeight / 2.0f) - 50, "Presione R para reiniciar");
+	slText(windowWidth / 2.0f - (10.0f * 24.0f), (windowHeight / 2.0f) - 100, "Presione M para volver al menu");
 
 	slRender();
 }

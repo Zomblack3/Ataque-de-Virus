@@ -19,6 +19,13 @@ void updateWinScreen(SCREENS& actualScreen, Player& player, Ball& ball, Brick br
 
 		resetGameplay(player, ball, bricks);
 	}
+
+	if (slGetKey('m') || slGetKey('M'))
+	{
+		actualScreen = MAIN_MENU;
+		
+		resetGameplay(player, ball, bricks);
+	}
 }
 
 void drawWinScreen(Player player)
@@ -31,9 +38,10 @@ void drawWinScreen(Player player)
 	slSetForeColor(1, 1, 1, 100);
 	
 	slText(windowWidth / 2.0f - (3.0f * 24.0f), (windowHeight / 2.0f) + 200, "GANASTE");
-	slText(windowWidth / 2.0f - ((pointsText.size() / 3) * 24.0f), windowHeight / 2.0f, pointsText.c_str());
-	slText(windowWidth / 2.0f - ((livesText.size() / 3) * 24.0f), (windowHeight / 2.0f) - 50, livesText.c_str());
+	slText(windowWidth / 2.0f - ((pointsText.size() / 3.0f) * 24.0f), windowHeight / 2.0f, pointsText.c_str());
+	slText(windowWidth / 2.0f - ((livesText.size() / 3.0f) * 24.0f), (windowHeight / 2.0f) - 50, livesText.c_str());
 	slText(windowWidth / 2.0f - (8.0f * 24.0f), (windowHeight / 2.0f) - 100, "Presione R para reiniciar");
+	slText(windowWidth / 2.0f - (10.0f * 24.0f), (windowHeight / 2.0f) - 150, "Presione M para volver al menu");
 	
 	slRender();
 }
