@@ -35,13 +35,22 @@ void drawWinScreen(Player player)
 	
 	slSetBackColor(0, 0, 0);
 	
+	slSetForeColor(0, 1, 0, 100);
+	
+	slText(windowWidth / 2.0f - (2.5f * 20.0f), (windowHeight / 2.0f) + 100, "GANASTE");
+	
 	slSetForeColor(1, 1, 1, 100);
 	
-	slText(windowWidth / 2.0f - (3.0f * 24.0f), (windowHeight / 2.0f) + 200, "GANASTE");
-	slText(windowWidth / 2.0f - ((pointsText.size() / 3.0f) * 24.0f), windowHeight / 2.0f, pointsText.c_str());
-	slText(windowWidth / 2.0f - ((livesText.size() / 3.0f) * 24.0f), (windowHeight / 2.0f) - 50, livesText.c_str());
-	slText(windowWidth / 2.0f - (8.0f * 24.0f), (windowHeight / 2.0f) - 100, "Presione R para reiniciar");
-	slText(windowWidth / 2.0f - (10.0f * 24.0f), (windowHeight / 2.0f) - 150, "Presione M para volver al menu");
+	slText(windowWidth / 2.0f - ((pointsText.size() / 3.0f) * 20.0f), windowHeight / 2.0f, pointsText.c_str());
+	slText(windowWidth / 2.0f - ((livesText.size() / 3.0f) * 20.0f), (windowHeight / 2.0f) - 50, livesText.c_str());
+	
+	slSetForeColor(0.5f, 1, 0, 100);
+	
+	slText(windowWidth / 2.0f - (8.0f * 20.0f), (windowHeight / 2.0f) - 100, "Presione R para reiniciar");
+	
+	slSetForeColor(0, 1, 0.25f, 100);
+
+	slText(windowWidth / 2.0f - (10.0f * 20.0f), (windowHeight / 2.0f) - 150, "Presione M para volver al menu");
 	
 	slRender();
 }
