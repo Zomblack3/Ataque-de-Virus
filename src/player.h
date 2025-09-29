@@ -7,6 +7,8 @@ struct Player
 	float baseX = 0;
 	float baseY = 0;
 
+	int speed = 10;
+
 	int width = 0;
 	int height = 0;
 

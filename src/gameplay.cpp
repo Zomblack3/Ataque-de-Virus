@@ -19,6 +19,8 @@ void gameplay(SCREENS& actualScreen, Player& player, Ball& ball, Brick bricks[am
 
 namespace gameplayFeatures
 {
+	float deltaTime = slGetDeltaTime() * 100;
+
 	static void updateGameplay(SCREENS & actualScreen, Player & player, Ball & ball, Brick bricks[amountOfBricksRow][amountOfBricksCollumns])
 	{
 		if (!isPauseOn)
@@ -30,8 +32,8 @@ namespace gameplayFeatures
 			}
 			else
 			{
-				ball.x += ball.speedX;
-				ball.y += ball.speedY;
+				ball.x += ball.speedX * deltaTime;
+				ball.y += ball.speedY * deltaTime;
 
 				if (ball.untouchableTimer <= 0)
 				{
@@ -77,11 +79,11 @@ namespace gameplayFeatures
 
 		if (slGetKey('a') || slGetKey('A') || slGetKey(SL_KEY_LEFT))
 			if (player.x > player.width / 2.0f)
-				player.x -= 10;
+				player.x -= player.speed * deltaTime;
 
 		if (slGetKey('d') || slGetKey('D') || slGetKey(SL_KEY_RIGHT))
 			if (player.x < windowWidth - player.width / 2.0f)
-				player.x += 10;
+				player.x += player.speed * deltaTime;
 
 		if (slGetKey(' '))
 			if (ball.isActive == false)
@@ -101,21 +103,15 @@ namespace gameplayFeatures
 			seconds = 0;
 		}
 
-		// kill command
+		// Kill command
 		if (slGetKey('/') && slGetKey('k') || slGetKey('K'))
 			player.lives = 0;
 
-		/*if (haveToResetBricks(bricks))
-		{
-			ball.isActive = false;
-
-			ball.speedX = ball.startSpeedX;
-			ball.speedY = ball.startSpeedY;
-
+		// Win command
+		if (slGetKey('/') && slGetKey('w') || slGetKey('W'))
 			for (int j = 0; j < amountOfBricksCollumns; j++)
 				for (int i = 0; i < amountOfBricksRow; i++)
-					bricks[i][j].isActive = true;
-		}*/
+					bricks[i][j].isActive = false;
 
 		if (winCondition(bricks))
 			actualScreen = WIN_SCREEN;
@@ -134,18 +130,14 @@ namespace gameplayFeatures
 
 		slSetForeColor(1, 1, 1, 100);
 
-		//slRectangleFill(player.x, player.y, player.width, player.height);
 		slSprite(player.texture, player.x, player.y, player.width, player.height);
 
-		//slCircleFill(ball.x, ball.y, ball.radius, 100);
 		slSprite(ball.texture, ball.x, ball.y, ball.radius * 4, ball.radius * 4);
 
 		for (int j = 0; j < amountOfBricksCollumns; j++)
 			for (int i = 0; i < amountOfBricksRow; i++)
 				if (bricks[i][j].isActive)
 					slSprite(bricks[i][j].texture, bricks[i][j].x, bricks[i][j].y, bricks[i][j].width, bricks[i][j].height);
-
-		//slRectangleFill(bricks[i][j].x, bricks[i][j].y, bricks[i][j].width, bricks[i][j].height);
 
 		slSetForeColor(0.5f, 0, 0.5f, 100);
 

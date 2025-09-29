@@ -8,8 +8,7 @@ enum SCREENS
 	OPTIONS,
 	GAMEPLAY,
 	LOSE_SCREEN,
-	WIN_SCREEN,
-	EXIT
+	WIN_SCREEN
 };
 
 const int windowWidth = 750;

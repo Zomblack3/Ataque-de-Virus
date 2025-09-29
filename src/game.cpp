@@ -65,11 +65,6 @@ namespace run
 				winScreen(actualScreen, player, ball, bricks);
 
 				break;
-			case EXIT:
-				
-
-				
-				break;
 			default:
 				break;
 			}

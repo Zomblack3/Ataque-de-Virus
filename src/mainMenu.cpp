@@ -13,9 +13,6 @@ void updateMainMenu(SCREENS& actualScreen)
 {
 	if (slGetKey('i') || slGetKey('I'))
 		actualScreen = GAMEPLAY;
-
-	if (slGetKey('s') || slGetKey('S'))
-		actualScreen = EXIT;
 }
 
 void drawMainMenu()
@@ -24,9 +21,10 @@ void drawMainMenu()
 
 	slSetForeColor(1, 1, 1, 100);
 
-	slText(windowWidth / 2.0f - (3.0f * 24.0f), (windowHeight / 2.0f) + 200, "BREAKOUT");
-	slText(windowWidth / 2.0f - (11.0f * 24.0f), windowHeight / 2.0f, "Presione la tecla I para iniciar");
-	slText(windowWidth / 2.0f - (11.0f * 24.0f), (windowHeight / 2.0f) - 50, "Presione la tecla S para salir");
+	slText(windowWidth / 2.0f - (6.0f * 24.0f), (windowHeight / 2.0f) + 200, "BREAKOUT PROJECT");
+	slText(windowWidth / 2.0f - (10.5f * 24.0f), windowHeight / 2.0f, "Presione la tecla I para iniciar");
+	slText(windowWidth / 2.0f - (10.0f * 24.0f), (windowHeight / 2.0f) - 50, "Presione la tecla S para salir");
+	slText(10, 10, "Hecho por Zomblack3 (Santiago Britos)");
 
 	slRender();
 }
