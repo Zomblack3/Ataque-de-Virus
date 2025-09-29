@@ -4,6 +4,7 @@
 
 #include "mainMenu.h"
 #include "gameplay.h"
+#include "pause.h"
 #include "loseScreen.h"
 #include "winScreen.h"
 
@@ -45,15 +46,15 @@ namespace run
 				mainMenu(actualScreen);
 
 				break;
-			case OPTIONS:
-				
-				
-				
-				break;
 			case GAMEPLAY:
 			
 				gameplay(actualScreen, player, ball, bricks, ballTexture);
 				
+				break;
+			case PAUSE:
+
+				pause(actualScreen, player, ball, bricks);
+
 				break;
 			case LOSE_SCREEN:
 

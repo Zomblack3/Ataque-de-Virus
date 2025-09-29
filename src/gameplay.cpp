@@ -2,8 +2,6 @@
 
 #include <string>
 
-int pauseButtonInputTimer = 0;
-
 double miliseconds = 0.0f;
 int seconds = 0;
 int minutes = 0;
@@ -23,59 +21,44 @@ namespace gameplayFeatures
 
 	static void updateGameplay(SCREENS & actualScreen, Player & player, Ball & ball, Brick bricks[amountOfBricksRow][amountOfBricksCollumns])
 	{
-		if (!isPauseOn)
+		if (ball.isActive == false)
 		{
-			if (ball.isActive == false)
-			{
-				ball.x = player.x;
-				ball.y = player.y + 40;
-			}
-			else
-			{
-				ball.x += ball.speedX * deltaTime;
-				ball.y += ball.speedY * deltaTime;
-
-				if (ball.untouchableTimer <= 0)
-				{
-					ballPlayerCollition(player, ball);
-
-					ballBrickCollition(bricks, ball, player);
-				}
-				else
-					ball.untouchableTimer--;
-
-				if (ball.x < ball.radius || ball.x > windowWidth - ball.radius)
-					ball.speedX *= -1.0f;
-
-				if (ball.y > (windowHeight - 45) - ball.radius)
-					ball.speedY *= -1.0f;
-
-				if (ball.y < 0)
-				{
-					ball.isActive = false;
-
-					ball.speedX = ball.startSpeedX;
-					ball.speedY = ball.startSpeedY;
-
-					player.lives--;
-				}
-			}
-		}
-
-		if (pauseButtonInputTimer == 0)
-		{
-			if (slGetKey('p') || slGetKey('P') || slGetKey(SL_KEY_ESCAPE))
-			{
-				if (isPauseOn)
-					isPauseOn = false;
-				else
-					isPauseOn = true;
-
-				pauseButtonInputTimer = 50;
-			}
+			ball.x = player.x;
+			ball.y = player.y + 40;
 		}
 		else
-			pauseButtonInputTimer--;
+		{
+			ball.x += ball.speedX * deltaTime;
+			ball.y += ball.speedY * deltaTime;
+
+			if (ball.untouchableTimer <= 0)
+			{
+				ballPlayerCollition(player, ball);
+
+				ballBrickCollition(bricks, ball, player);
+			}
+			else
+				ball.untouchableTimer--;
+
+			if (ball.x < ball.radius || ball.x > windowWidth - ball.radius)
+				ball.speedX *= -1.0f;
+
+			if (ball.y > (windowHeight - 45) - ball.radius)
+				ball.speedY *= -1.0f;
+
+			if (ball.y < 0)
+			{
+				ball.isActive = false;
+
+				ball.speedX = ball.startSpeedX;
+				ball.speedY = ball.startSpeedY;
+
+				player.lives--;
+			}
+		}
+
+		if (slGetKey('p') || slGetKey('P') || slGetKey(SL_KEY_ESCAPE))
+			actualScreen = PAUSE;
 
 		if (slGetKey('a') || slGetKey('A') || slGetKey(SL_KEY_LEFT))
 			if (player.x > player.width / 2.0f)
@@ -178,7 +161,6 @@ namespace gameplayFeatures
 						if ((ball.x + (ball.radius / 2.0f)) >= (bricks[i][j].x - (bricks[i][j].width / 2.0f)) && (ball.x - (ball.radius / 2.0f)) <= (bricks[i][j].x + (bricks[i][j].width / 2.0f)))
 						{
 							ball.speedY *= -1.0f;
-							//ball.speedX = ((ball.x - bricks[i][j].x) / bricks[i][j].width * 5) * -1.0f;
 							ball.speedX = (ball.x - bricks[i][j].x) / bricks[i][j].width * 10;
 
 							bricks[i][j].isActive = false;
@@ -231,13 +213,3 @@ void resetGameplay(Player& player, Ball& ball, Brick bricks[amountOfBricksRow][a
 
 	isPauseOn = false;
 }
-
- /*static bool haveToResetBricks(Brick bricks[amountOfBricksRow][amountOfBricksCollumns])
-{
-	for (int j = 0; j < amountOfBricksCollumns; j++)
-		for (int i = 0; i < amountOfBricksRow; i++)
-			if (bricks[i][j].isActive)
-				return false;
-	
-	return true;
-}*/

@@ -21,5 +21,3 @@ namespace gameplayFeatures
 }
 
 void resetGameplay(Player& player, Ball& ball, Brick bricks[amountOfBricksRow][amountOfBricksCollumns]);
-
-//static bool haveToResetBricks(Brick bricks[amountOfBricksRow][amountOfBricksCollumns]);

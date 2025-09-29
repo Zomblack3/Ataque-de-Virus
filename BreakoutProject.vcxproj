@@ -150,6 +150,7 @@
     <ClCompile Include="src\loseScreen.cpp" />
     <ClCompile Include="src\main.cpp" />
     <ClCompile Include="src\mainMenu.cpp" />
+    <ClCompile Include="src\pause.cpp" />
     <ClCompile Include="src\player.cpp" />
     <ClCompile Include="src\winScreen.cpp" />
   </ItemGroup>
@@ -161,6 +162,7 @@
     <ClInclude Include="src\gameplay.h" />
     <ClInclude Include="src\loseScreen.h" />
     <ClInclude Include="src\mainMenu.h" />
+    <ClInclude Include="src\pause.h" />
     <ClInclude Include="src\player.h" />
     <ClInclude Include="src\winScreen.h" />
   </ItemGroup>
