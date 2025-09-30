@@ -48,6 +48,8 @@ void drawMainMenu()
 	{
 		slRectangleFill((windowWidth / 2.0f) + 20, (windowHeight / 2.0f) + 110, (16.0f * 20.0f), 30);
 
+		slSetForeColor(1, 0, 0, 100);
+
 		slText(windowWidth / 2.0f - (12.5f * 20.0f), (windowHeight / 2.0f) + 200, "Se a producido un error en el sistema");
 		slText(windowWidth / 2.0f - (9.5f * 20.0f), (windowHeight / 2.0f) + 150, "parece que esta sufriendo un");
 		
