@@ -27,6 +27,7 @@ namespace run
 		int ballTexture = slLoadTexture("res/textures/ball.png");
 		int playerTexture = slLoadTexture("res/textures/player.png");
 		int brickTexture = slLoadTexture("res/textures/brick.png");
+		int backgroundTexture = slLoadTexture("res/textures/background.png");
 
 		player.texture = playerTexture;
 		ball.texture = ballTexture;
@@ -48,7 +49,7 @@ namespace run
 				break;
 			case GAMEPLAY:
 			
-				gameplay(actualScreen, player, ball, bricks, ballTexture);
+				gameplay(actualScreen, player, ball, bricks, backgroundTexture);
 				
 				break;
 			case PAUSE:

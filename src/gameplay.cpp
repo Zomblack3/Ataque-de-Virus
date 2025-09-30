@@ -8,11 +8,11 @@ int minutes = 0;
 
 bool isPauseOn = false;
 
-void gameplay(SCREENS& actualScreen, Player& player, Ball& ball, Brick bricks[amountOfBricksRow][amountOfBricksCollumns], int ballTexture)
+void gameplay(SCREENS& actualScreen, Player& player, Ball& ball, Brick bricks[amountOfBricksRow][amountOfBricksCollumns], int backgroundTexture)
 {
 	gameplayFeatures::updateGameplay(actualScreen, player, ball, bricks);
 	
-	gameplayFeatures::drawGameplay(player, ball, bricks, ballTexture);
+	gameplayFeatures::drawGameplay(player, ball, bricks, backgroundTexture);
 }
 
 namespace gameplayFeatures
@@ -40,11 +40,26 @@ namespace gameplayFeatures
 			else
 				ball.untouchableTimer--;
 
-			if (ball.x < ball.radius || ball.x > windowWidth - ball.radius)
+			if (ball.x < ball.radius)
+			{
+				ball.x = ball.radius;
+
 				ball.speedX *= -1.0f;
+			}
+			else if (ball.x > windowWidth - ball.radius)
+			{
+				ball.x = windowWidth - ball.radius;
+
+				ball.speedX *= -1.0f;
+			}
+
 
 			if (ball.y > (windowHeight - 45) - ball.radius)
+			{
+				ball.y = (windowHeight - 45) - ball.radius;
+
 				ball.speedY *= -1.0f;
+			}
 
 			if (ball.y < 0)
 			{
@@ -103,7 +118,7 @@ namespace gameplayFeatures
 			actualScreen = LOSE_SCREEN;
 	}
 
-	static void drawGameplay(Player player, Ball ball, Brick bricks[amountOfBricksRow][amountOfBricksCollumns], int ballTexture)
+	static void drawGameplay(Player player, Ball ball, Brick bricks[amountOfBricksRow][amountOfBricksCollumns], int backgroundTexture)
 	{
 		std::string timerText = "Tiempo: " + std::to_string(minutes) + ":" + std::to_string(seconds);
 		std::string livesText = "Vidas: " + std::to_string(player.lives);
@@ -113,9 +128,11 @@ namespace gameplayFeatures
 
 		slSetForeColor(1, 1, 1, 100);
 
+		slSprite(backgroundTexture, windowWidth / 2.0f, windowHeight / 2.0f, windowWidth, windowHeight);
+
 		slSprite(player.texture, player.x, player.y, player.width, player.height);
 
-		slSprite(ball.texture, ball.x, ball.y, ball.radius * 3, ball.radius * 3);
+		slSprite(ball.texture, ball.x, ball.y, ball.radius + (ball.radius / 2.0f), ball.radius + (ball.radius / 2.0f));
 
 		for (int j = 0; j < amountOfBricksCollumns; j++)
 			for (int i = 0; i < amountOfBricksRow; i++)
