@@ -16,7 +16,7 @@ void updateMainMenu(SCREENS& actualScreen)
 {
 	if (!areTheControlesShown && !areTheRulesShown)
 	{
-		if (slGetKey('i') || slGetKey('I'))
+		if (slGetKey('d') || slGetKey('D'))
 			actualScreen = GAMEPLAY;
 
 		if (slGetKey('c') || slGetKey('C'))
@@ -40,21 +40,32 @@ void updateMainMenu(SCREENS& actualScreen)
 
 void drawMainMenu()
 {
-	slSetBackColor(0, 0, 0);
+	slSetBackColor(0, 0, 1);
 
 	slSetForeColor(1, 1, 1, 100);
 
 	if (!areTheControlesShown && !areTheRulesShown)
 	{
-		slText(windowWidth / 2.0f - (5.0f * 20.0f), (windowHeight / 2.0f) + 100, "BREAKOUT PROJECT");
-		slText(windowWidth / 2.0f - (10.5f * 20.0f), windowHeight / 2.0f, "Presione la tecla I para iniciar");
+		slRectangleFill((windowWidth / 2.0f) + 20, (windowHeight / 2.0f) + 110, (16.0f * 20.0f), 30);
+
+		slText(windowWidth / 2.0f - (12.5f * 20.0f), (windowHeight / 2.0f) + 200, "Se a producido un error en el sistema");
+		slText(windowWidth / 2.0f - (9.5f * 20.0f), (windowHeight / 2.0f) + 150, "parece que esta sufriendo un");
+		
+		slSetForeColor(0, 0, 1, 100);
+
+		slText(windowWidth / 2.0f - (4.0f * 20.0f), (windowHeight / 2.0f) + 100, "ATAQUE DE VIRUS");
+		
+		slSetForeColor(1, 1, 1, 100);
+		
+		slText(windowWidth / 2.0f - (10.5f * 20.0f), windowHeight / 2.0f, "Presione la tecla D para defenderse");
 		slText(windowWidth / 2.0f - (14.0f * 20.0f), (windowHeight / 2.0f) - 50, "Presione la tecla C para ver los controles");
 		slText(windowWidth / 2.0f - (13.0f * 20.0f), (windowHeight / 2.0f) - 100, "Presione la tecla R para ver las reglas");
-		slText(windowWidth / 2.0f - (10.0f * 20.0f), (windowHeight / 2.0f) - 150, "Presione la tecla S para salir");
+		slText(windowWidth / 2.0f - (14.5f * 20.0f), (windowHeight / 2.0f) - 150, "Presione la tecla S para cerrar el programa");
 		
-		slSetForeColor(0.5f, 0.5f, 0.5f, 100);
+		slSetForeColor(0.3f, 1, 0, 100);
 		
-		slText(10, 10, "Hecho por Zomblack3 (Santiago Britos)");
+		slText(10, 50, "Hecho por Zomblack3 (Santiago Britos)");
+		slText(10, 10, "Fondo del gameplay: semen.bababrykin (Wallpapers.com)");
 	}
 	else if (areTheControlesShown)
 	{

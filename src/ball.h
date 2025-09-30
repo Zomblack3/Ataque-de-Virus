@@ -13,7 +13,7 @@ struct Ball
 	float speedX = 5;
 	float speedY = 5;
 
-	int radius = 10;
+	int radius = 20;
 
 	int untouchableTimer = 0;
 
