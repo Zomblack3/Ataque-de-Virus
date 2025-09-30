@@ -87,11 +87,11 @@ void drawMainMenu()
 	else
 	{
 		slText(windowWidth / 2.0f - (9.0f * 20.0f), (windowHeight / 2.0f) + 250, "El jugador debera eliminar a");
-		slText(windowWidth / 2.0f - (11.0f * 20.0f), (windowHeight / 2.0f) + 200, "todos los ladrillos de la pantalla");
-		slText(windowWidth / 2.0f - (11.0f * 20.0f), (windowHeight / 2.0f) + 150, "haciendo rebotar una bola en el,");
-		slText(windowWidth / 2.0f - (11.0f * 20.0f), (windowHeight / 2.0f) + 100, "cada vez que la bola rebote contra");
-		slText(windowWidth / 2.0f - (12.0f * 20.0f), (windowHeight / 2.0f) + 50, "los ladrillos estos seran eliminados.");
-		slText(windowWidth / 2.0f - (11.0f * 20.0f), (windowHeight / 2.0f) - 50, "En caso de que la pelota salga de");
+		slText(windowWidth / 2.0f - (10.0f * 20.0f), (windowHeight / 2.0f) + 200, "todos los virus de la pantalla");
+		slText(windowWidth / 2.0f - (11.0f * 20.0f), (windowHeight / 2.0f) + 150, "haciendo rebotar un escudo en el,");
+		slText(windowWidth / 2.0f - (12.0f * 20.0f), (windowHeight / 2.0f) + 100, "cada vez que el escudo rebote contra");
+		slText(windowWidth / 2.0f - (12.0f * 20.0f), (windowHeight / 2.0f) + 50, "los virus, estos seran eliminados.");
+		slText(windowWidth / 2.0f - (11.0f * 20.0f), (windowHeight / 2.0f) - 50, "En caso de que el escudo salga de");
 		slText(windowWidth / 2.0f - (11.0f * 20.0f), (windowHeight / 2.0f) - 100, "la pantalla por el lado inferior");
 		slText(windowWidth / 2.0f - (9.0f * 20.0f), (windowHeight / 2.0f) - 150, "el jugador perdera una vida,");
 		slText(windowWidth / 2.0f - (13.0f * 20.0f), (windowHeight / 2.0f) - 200, "si pierde tres vidas pierde la partida");
