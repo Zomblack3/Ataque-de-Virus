@@ -126,9 +126,11 @@ namespace gameplayFeatures
 
 		slSetBackColor(0, 0, 0);
 
-		slSetForeColor(1, 1, 1, 100);
+		slSetForeColor(0, 0, 1, 100);
 
 		slSprite(backgroundTexture, windowWidth / 2.0f, windowHeight / 2.0f, windowWidth, windowHeight);
+
+		slSetForeColor(1, 1, 1, 100);
 
 		slSprite(player.texture, player.x, player.y, player.width, player.height);
 

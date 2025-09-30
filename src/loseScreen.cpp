@@ -4,11 +4,11 @@
 
 #include <string>
 
-void loseScreen(SCREENS& actualScreen, Player& player, Ball& ball, Brick bricks[amountOfBricksRow][amountOfBricksCollumns])
+void loseScreen(SCREENS& actualScreen, Player& player, Ball& ball, Brick bricks[amountOfBricksRow][amountOfBricksCollumns], int backgroundTexture)
 {
 	updateLoseScreen(actualScreen, player, ball, bricks);
 
-	drawLoseScreen(player);
+	drawLoseScreen(player, backgroundTexture);
 }
 
 void updateLoseScreen(SCREENS& actualScreen, Player& player, Ball& ball, Brick bricks[amountOfBricksRow][amountOfBricksCollumns])
@@ -28,7 +28,7 @@ void updateLoseScreen(SCREENS& actualScreen, Player& player, Ball& ball, Brick b
 	}
 }
 
-void drawLoseScreen(Player player)
+void drawLoseScreen(Player player, int backgroundTexture)
 {
 	std::string pointsText = "Puntos: " + std::to_string(player.points);
 
@@ -36,17 +36,19 @@ void drawLoseScreen(Player player)
 
 	slSetForeColor(1, 0, 0, 100);
 
+	slSprite(backgroundTexture, windowWidth / 2.0f, windowHeight / 2.0f, windowWidth, windowHeight);
+
 	slText(windowWidth / 2.0f - (2.5f * 20.0f), (windowHeight / 2.0f) + 100, "PERDISTE");
 	
 	slSetForeColor(1, 1, 1, 100);
 	
 	slText(windowWidth / 2.0f - ((pointsText.size() / 3.0f) * 20.0f), windowHeight / 2.0f, pointsText.c_str());
 	
-	slSetForeColor(0.25f, 1, 0, 100);
+	slSetForeColor(1, 1, 1, 100);
 	
 	slText(windowWidth / 2.0f - (8.0f * 20.0f), (windowHeight / 2.0f) - 50, "Presione R para reiniciar");
 	
-	slSetForeColor(0, 1, 0.25f, 100);
+	slSetForeColor(1, 1, 1, 100);
 	
 	slText(windowWidth / 2.0f - (10.0f * 20.0f), (windowHeight / 2.0f) - 100, "Presione M para volver al menu");
 

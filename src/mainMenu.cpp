@@ -40,7 +40,7 @@ void updateMainMenu(SCREENS& actualScreen)
 
 void drawMainMenu()
 {
-	slSetBackColor(0, 0, 1);
+	slSetBackColor(0, 0, 0.5f);
 
 	slSetForeColor(1, 1, 1, 100);
 
@@ -53,7 +53,7 @@ void drawMainMenu()
 		slText(windowWidth / 2.0f - (12.5f * 20.0f), (windowHeight / 2.0f) + 200, "Se a producido un error en el sistema");
 		slText(windowWidth / 2.0f - (9.5f * 20.0f), (windowHeight / 2.0f) + 150, "parece que esta sufriendo un");
 		
-		slSetForeColor(0, 0, 1, 100);
+		slSetForeColor(0, 0, 0.5f, 100);
 
 		slText(windowWidth / 2.0f - (4.0f * 20.0f), (windowHeight / 2.0f) + 100, "ATAQUE DE VIRUS");
 		

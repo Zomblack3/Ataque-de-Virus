@@ -4,11 +4,11 @@
 
 #include <string>
 
-void winScreen(SCREENS& actualScreen, Player& player, Ball& ball, Brick bricks[amountOfBricksRow][amountOfBricksCollumns])
+void winScreen(SCREENS& actualScreen, Player& player, Ball& ball, Brick bricks[amountOfBricksRow][amountOfBricksCollumns], int backgroundTexture)
 {
 	updateWinScreen(actualScreen, player, ball, bricks);
 
-	drawWinScreen(player);
+	drawWinScreen(player, backgroundTexture);
 }
 
 void updateWinScreen(SCREENS& actualScreen, Player& player, Ball& ball, Brick bricks[amountOfBricksRow][amountOfBricksCollumns])
@@ -28,14 +28,16 @@ void updateWinScreen(SCREENS& actualScreen, Player& player, Ball& ball, Brick br
 	}
 }
 
-void drawWinScreen(Player player)
+void drawWinScreen(Player player, int backgroundTexture)
 {
 	std::string livesText = "Vidas: " + std::to_string(player.lives);
 	std::string pointsText = "Puntos: " + std::to_string(player.points);
 	
 	slSetBackColor(0, 0, 0);
 	
-	slSetForeColor(0, 1, 0, 100);
+	slSetForeColor(0, 0.5f, 0, 100);
+
+	slSprite(backgroundTexture, windowWidth / 2.0f, windowHeight / 2.0f, windowWidth, windowHeight);
 	
 	slText(windowWidth / 2.0f - (2.5f * 20.0f), (windowHeight / 2.0f) + 100, "GANASTE");
 	
@@ -44,11 +46,11 @@ void drawWinScreen(Player player)
 	slText(windowWidth / 2.0f - ((pointsText.size() / 3.0f) * 20.0f), windowHeight / 2.0f, pointsText.c_str());
 	slText(windowWidth / 2.0f - ((livesText.size() / 3.0f) * 20.0f), (windowHeight / 2.0f) - 50, livesText.c_str());
 	
-	slSetForeColor(0.5f, 1, 0, 100);
+	slSetForeColor(1, 1, 1, 100);
 	
 	slText(windowWidth / 2.0f - (8.0f * 20.0f), (windowHeight / 2.0f) - 100, "Presione R para reiniciar");
 	
-	slSetForeColor(0, 1, 0.25f, 100);
+	slSetForeColor(1, 1, 1, 100);
 
 	slText(windowWidth / 2.0f - (10.0f * 20.0f), (windowHeight / 2.0f) - 150, "Presione M para volver al menu");
 	

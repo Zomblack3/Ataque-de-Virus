@@ -54,17 +54,17 @@ namespace run
 				break;
 			case PAUSE:
 
-				pause(actualScreen, player, ball, bricks);
+				pause(actualScreen, player, ball, bricks, backgroundTexture);
 
 				break;
 			case LOSE_SCREEN:
 
-				loseScreen(actualScreen, player, ball, bricks);
+				loseScreen(actualScreen, player, ball, bricks, backgroundTexture);
 
 				break;
 			case WIN_SCREEN:
 
-				winScreen(actualScreen, player, ball, bricks);
+				winScreen(actualScreen, player, ball, bricks, backgroundTexture);
 
 				break;
 			default:

@@ -5,7 +5,7 @@
 #include "ball.h"
 #include "brick.h"
 
-void winScreen(SCREENS& actualScreen, Player& player, Ball& ball, Brick bricks[amountOfBricksRow][amountOfBricksCollumns]);
+void winScreen(SCREENS& actualScreen, Player& player, Ball& ball, Brick bricks[amountOfBricksRow][amountOfBricksCollumns], int backgroundTexture);
 
 void updateWinScreen(SCREENS& actualScreen, Player& player, Ball& ball, Brick bricks[amountOfBricksRow][amountOfBricksCollumns]);
-void drawWinScreen(Player player);
+void drawWinScreen(Player player, int backgroundTexture);

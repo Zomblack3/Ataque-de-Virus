@@ -2,10 +2,10 @@
 
 #include "gameplay.h"
 
-void pause(SCREENS& actualScreen, Player& player, Ball& ball, Brick bricks[amountOfBricksRow][amountOfBricksCollumns])
+void pause(SCREENS& actualScreen, Player& player, Ball& ball, Brick bricks[amountOfBricksRow][amountOfBricksCollumns], int backgroundTexture)
 {
 	updatePause(actualScreen, player, ball, bricks);
-	drawPause();
+	drawPause(backgroundTexture);
 }
 
 void updatePause(SCREENS& actualScreen, Player& player, Ball& ball, Brick bricks[amountOfBricksRow][amountOfBricksCollumns])
@@ -20,11 +20,13 @@ void updatePause(SCREENS& actualScreen, Player& player, Ball& ball, Brick bricks
 	}
 }
 
-void drawPause()
+void drawPause(int backgroundTexture)
 {
 	slSetBackColor(0, 0, 0);
 
-	slSetForeColor(1, 1, 0, 100);
+	slSetForeColor(0.5f, 0.5f, 0, 100);
+
+	slSprite(backgroundTexture, windowWidth / 2.0f, windowHeight / 2.0f, windowWidth, windowHeight);
 
 	slText(windowWidth / 2.0f - ((6.0f / 3.0f) * 20.0f), (windowHeight / 2.0f) + 100, "PAUSA");
 	
