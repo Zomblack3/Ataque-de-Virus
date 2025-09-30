@@ -32,7 +32,7 @@ namespace run
 		player.texture = playerTexture;
 		ball.texture = ballTexture;
 
-		setBricks(bricks, 175, windowHeight - 100, 50, 25, brickTexture);
+		setBricks(bricks, 175, windowHeight - 100, 75, 30, brickTexture);
 
 		int font = slLoadFont("res/fonts/Bitcount_Single_Ink/BitcountSingleInk-VariableFont_CRSV,ELSH,ELXP,SZP1,SZP2,XPN1,XPN2,YPN1,YPN2,slnt,wght.ttf");
 
