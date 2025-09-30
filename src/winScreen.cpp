@@ -39,20 +39,26 @@ void drawWinScreen(Player player, int backgroundTexture)
 
 	slSprite(backgroundTexture, windowWidth / 2.0f, windowHeight / 2.0f, windowWidth, windowHeight);
 	
-	slText(windowWidth / 2.0f - (2.5f * 20.0f), (windowHeight / 2.0f) + 100, "GANASTE");
-	
-	slSetForeColor(1, 1, 1, 100);
-	
-	slText(windowWidth / 2.0f - ((pointsText.size() / 3.0f) * 20.0f), windowHeight / 2.0f, pointsText.c_str());
-	slText(windowWidth / 2.0f - ((livesText.size() / 3.0f) * 20.0f), (windowHeight / 2.0f) - 50, livesText.c_str());
-	
-	slSetForeColor(1, 1, 1, 100);
-	
-	slText(windowWidth / 2.0f - (8.0f * 20.0f), (windowHeight / 2.0f) - 100, "Presione R para reiniciar");
-	
+	slText(windowWidth / 2.0f - ((16.0f / 3.0f) * 20.0f), (windowHeight / 2.0f) + 150, "EL VIRUS A SIDO");
+
+	slRectangleFill((windowWidth / 2.0f) - 5, (windowHeight / 2.0f) + 110, (10.0f * 20.0f), 30);
+
 	slSetForeColor(1, 1, 1, 100);
 
-	slText(windowWidth / 2.0f - (10.0f * 20.0f), (windowHeight / 2.0f) - 150, "Presione M para volver al menu");
+	slText(windowWidth / 2.0f - ((10.0f / 3.0f) * 20.0f), (windowHeight / 2.0f) + 100, "ELIMINADO");
+	
+	slSetForeColor(1, 1, 0, 100);
+	
+	slText(windowWidth / 2.0f - ((pointsText.size() / 3.0f) * 20.0f), windowHeight / 2.0f + 25, pointsText.c_str());
+	slText(windowWidth / 2.0f - ((livesText.size() / 3.0f) * 20.0f), (windowHeight / 2.0f) - 25, livesText.c_str());
+	
+	//slSetForeColor(1, 1, 1, 100);
+	
+	slText(windowWidth / 2.0f - (8.0f * 20.0f), (windowHeight / 2.0f) - 75, "Presione R para reiniciar");
+	
+	//slSetForeColor(1, 1, 1, 100);
+
+	slText(windowWidth / 2.0f - (10.0f * 20.0f), (windowHeight / 2.0f) - 125, "Presione M para volver al menu");
 	
 	slRender();
 }

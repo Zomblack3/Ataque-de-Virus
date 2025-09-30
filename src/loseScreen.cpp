@@ -38,19 +38,19 @@ void drawLoseScreen(Player player, int backgroundTexture)
 
 	slSprite(backgroundTexture, windowWidth / 2.0f, windowHeight / 2.0f, windowWidth, windowHeight);
 
-	slText(windowWidth / 2.0f - (2.5f * 20.0f), (windowHeight / 2.0f) + 100, "PERDISTE");
+	slText(windowWidth / 2.0f - ((22.0f / 3.0f) * 20.0f), (windowHeight / 2.0f) + 150, "SU COMPUTADORA A SIDO");
+
+	slRectangleFill(windowWidth / 2.0f, (windowHeight / 2.0f) + 110, (10.0f * 20.0f), 30);
 	
 	slSetForeColor(1, 1, 1, 100);
+
+	slText(windowWidth / 2.0f - ((10.0f / 3.0f) * 20.0f), (windowHeight / 2.0f) + 100, "INFECTADA");
 	
-	slText(windowWidth / 2.0f - ((pointsText.size() / 3.0f) * 20.0f), windowHeight / 2.0f, pointsText.c_str());
+	slSetForeColor(1, 1, 0, 100);
 	
-	slSetForeColor(1, 1, 1, 100);
-	
-	slText(windowWidth / 2.0f - (8.0f * 20.0f), (windowHeight / 2.0f) - 50, "Presione R para reiniciar");
-	
-	slSetForeColor(1, 1, 1, 100);
-	
-	slText(windowWidth / 2.0f - (10.0f * 20.0f), (windowHeight / 2.0f) - 100, "Presione M para volver al menu");
+	slText(windowWidth / 2.0f - ((pointsText.size() / 3.0f) * 20.0f), windowHeight / 2.0f + 25, pointsText.c_str());
+	slText(windowWidth / 2.0f - (8.0f * 20.0f), (windowHeight / 2.0f) - 25, "Presione R para reiniciar");
+	slText(windowWidth / 2.0f - (10.0f * 20.0f), (windowHeight / 2.0f) - 75, "Presione M para volver al menu");
 
 	slRender();
 }
