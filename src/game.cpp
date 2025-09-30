@@ -26,7 +26,7 @@ namespace run
 
 		int ballTexture = slLoadTexture("res/textures/ball.png");
 		int playerTexture = slLoadTexture("res/textures/player.png");
-		int brickTexture = slLoadTexture("res/textures/bricks.png");
+		int brickTexture = slLoadTexture("res/textures/brick.png");
 
 		player.texture = playerTexture;
 		ball.texture = ballTexture;

@@ -115,7 +115,7 @@ namespace gameplayFeatures
 
 		slSprite(player.texture, player.x, player.y, player.width, player.height);
 
-		slSprite(ball.texture, ball.x, ball.y, ball.radius * 4, ball.radius * 4);
+		slSprite(ball.texture, ball.x, ball.y, ball.radius * 3, ball.radius * 3);
 
 		for (int j = 0; j < amountOfBricksCollumns; j++)
 			for (int i = 0; i < amountOfBricksRow; i++)
