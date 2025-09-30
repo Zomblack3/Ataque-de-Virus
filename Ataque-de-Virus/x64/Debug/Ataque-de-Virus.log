@@ -1,0 +1,36 @@
+﻿  brick.cpp
+C:\Users\Aula 2\Documents\GitHub\Ataque de Virus\src\brick.cpp(7,15): warning C4244: '=': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\Aula 2\Documents\GitHub\Ataque de Virus\src\brick.cpp(8,15): warning C4244: '=': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\Aula 2\Documents\GitHub\Ataque de Virus\src\brick.cpp(21,73): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
+C:\Users\Aula 2\Documents\GitHub\Ataque de Virus\src\brick.cpp(21,50): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
+  game.cpp
+C:\Users\Aula 2\Documents\GitHub\Ataque de Virus\src\gameManager.h(3,10): error C1083: No se puede abrir el archivo incluir: 'sl.h': No such file or directory
+  (compilando archivo de origen "src/game.cpp")
+  
+  gameplay.cpp
+C:\Users\Aula 2\Documents\GitHub\Ataque de Virus\src\gameManager.h(3,10): error C1083: No se puede abrir el archivo incluir: 'sl.h': No such file or directory
+  (compilando archivo de origen "src/gameplay.cpp")
+  
+  loseScreen.cpp
+C:\Users\Aula 2\Documents\GitHub\Ataque de Virus\src\gameManager.h(3,10): error C1083: No se puede abrir el archivo incluir: 'sl.h': No such file or directory
+  (compilando archivo de origen "src/loseScreen.cpp")
+  
+  main.cpp
+  mainMenu.cpp
+C:\Users\Aula 2\Documents\GitHub\Ataque de Virus\src\gameManager.h(3,10): error C1083: No se puede abrir el archivo incluir: 'sl.h': No such file or directory
+  (compilando archivo de origen "src/mainMenu.cpp")
+  
+  pause.cpp
+C:\Users\Aula 2\Documents\GitHub\Ataque de Virus\src\gameManager.h(3,10): error C1083: No se puede abrir el archivo incluir: 'sl.h': No such file or directory
+  (compilando archivo de origen "src/pause.cpp")
+  
+  player.cpp
+C:\Users\Aula 2\Documents\GitHub\Ataque de Virus\src\player.cpp(7,16): warning C4244: '=': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\Aula 2\Documents\GitHub\Ataque de Virus\src\player.cpp(8,16): warning C4244: '=': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\Aula 2\Documents\GitHub\Ataque de Virus\src\player.cpp(9,20): warning C4244: '=': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\Aula 2\Documents\GitHub\Ataque de Virus\src\player.cpp(10,20): warning C4244: '=': conversión de 'int' a 'float'; posible pérdida de datos
+  winScreen.cpp
+C:\Users\Aula 2\Documents\GitHub\Ataque de Virus\src\gameManager.h(3,10): error C1083: No se puede abrir el archivo incluir: 'sl.h': No such file or directory
+  (compilando archivo de origen "src/winScreen.cpp")
+  
+  Generando código...

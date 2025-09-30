@@ -24,6 +24,7 @@
     <ProjectGuid>{5efd568f-c362-4cb8-a262-39c46071aaa3}</ProjectGuid>
     <RootNamespace>BreakoutProject</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+    <ProjectName>Ataque-de-Virus</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">

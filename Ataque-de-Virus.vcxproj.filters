@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Entitis .h">
+      <UniqueIdentifier>{ad74b006-9655-4096-8831-bd71bba125f1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Entitis .cpp">
+      <UniqueIdentifier>{af434e07-7b6b-48e6-b5cb-66c413c04c1f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Screens .cpp">
+      <UniqueIdentifier>{f01dd480-4016-476f-8134-b1bbda4610c2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Screens .h">
+      <UniqueIdentifier>{6ec48de7-2a85-4ef0-986f-493c48099ba0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Main">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Game">
+      <UniqueIdentifier>{0fe7516c-837f-4fff-ace7-fb805a3ebaef}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\main.cpp">
+      <Filter>Main</Filter>
+    </ClCompile>
+    <ClCompile Include="src\brick.cpp">
+      <Filter>Entitis .cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="src\player.cpp">
+      <Filter>Entitis .cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="src\gameplay.cpp">
+      <Filter>Screens .cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="src\loseScreen.cpp">
+      <Filter>Screens .cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="src\mainMenu.cpp">
+      <Filter>Screens .cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="src\pause.cpp">
+      <Filter>Screens .cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="src\winScreen.cpp">
+      <Filter>Screens .cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="src\game.cpp">
+      <Filter>Game</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\ball.h">
+      <Filter>Entitis .h</Filter>
+    </ClInclude>
+    <ClInclude Include="src\brick.h">
+      <Filter>Entitis .h</Filter>
+    </ClInclude>
+    <ClInclude Include="src\player.h">
+      <Filter>Entitis .h</Filter>
+    </ClInclude>
+    <ClInclude Include="src\gameplay.h">
+      <Filter>Screens .h</Filter>
+    </ClInclude>
+    <ClInclude Include="src\mainMenu.h">
+      <Filter>Screens .h</Filter>
+    </ClInclude>
+    <ClInclude Include="src\winScreen.h">
+      <Filter>Screens .h</Filter>
+    </ClInclude>
+    <ClInclude Include="src\pause.h">
+      <Filter>Screens .h</Filter>
+    </ClInclude>
+    <ClInclude Include="src\loseScreen.h">
+      <Filter>Screens .h</Filter>
+    </ClInclude>
+    <ClInclude Include="src\game.h">
+      <Filter>Game</Filter>
+    </ClInclude>
+    <ClInclude Include="src\gameManager.h">
+      <Filter>Game</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
