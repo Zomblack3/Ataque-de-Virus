@@ -18,7 +18,7 @@ namespace run
 	{
 		SCREENS actualScreen = MAIN_MENU;
 
-		slWindow(windowWidth, windowHeight, "VIRUS ATTACK", 0);
+		slWindow(windowWidth, windowHeight, "ATAQUE DE VIRUS", 0);
 		
 		Player player = createPlayer(windowWidth / 2, 30, 75, 25);
 		Ball ball = { };

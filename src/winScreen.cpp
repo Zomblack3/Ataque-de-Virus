@@ -50,14 +50,8 @@ void drawWinScreen(Player player, int backgroundTexture)
 	slSetForeColor(1, 1, 0, 100);
 	
 	slText(windowWidth / 2.0f - ((pointsText.size() / 3.0f) * 20.0f), windowHeight / 2.0f + 25, pointsText.c_str());
-	slText(windowWidth / 2.0f - ((livesText.size() / 3.0f) * 20.0f), (windowHeight / 2.0f) - 25, livesText.c_str());
-	
-	//slSetForeColor(1, 1, 1, 100);
-	
+	slText(windowWidth / 2.0f - ((livesText.size() / 3.0f) * 20.0f), (windowHeight / 2.0f) - 25, livesText.c_str());	
 	slText(windowWidth / 2.0f - (8.0f * 20.0f), (windowHeight / 2.0f) - 75, "Presione R para reiniciar");
-	
-	//slSetForeColor(1, 1, 1, 100);
-
 	slText(windowWidth / 2.0f - (10.0f * 20.0f), (windowHeight / 2.0f) - 125, "Presione M para volver al menu");
 	
 	slRender();

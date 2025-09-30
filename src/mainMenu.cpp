@@ -66,8 +66,12 @@ void drawMainMenu()
 		
 		slSetForeColor(0.3f, 1, 0, 100);
 		
+		slSetFontSize(20);
+
 		slText(10, 50, "Hecho por Zomblack3 (Santiago Britos)");
-		slText(10, 10, "Fondo del gameplay: semen.bababrykin (Wallpapers.com)");
+		slText(10, 10, "Fondo personalizado: semen.bababrykin (Wallpapers.com)");
+
+		slSetFontSize(24);
 	}
 	else if (areTheControlesShown)
 	{
